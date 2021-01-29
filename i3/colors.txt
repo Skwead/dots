@@ -1,0 +1,8 @@
+# class                 border  bground text    indicator child_border
+client.focused        	{brd}	{bg}	{txt}	{brd}	{brd} 
+client.focused_inactive	{brd_i}	{bg}	{txt}	{brd_i}	{brd_i}
+client.unfocused       	{brd_i}	{bg}	{txt}	{brd_i}	{brd_i}
+client.urgent          	{brd}	{bg}	{txt}	{brd}	{brd}
+client.placeholder     	{brd_i}	{bg}	{txt}	{brd_i}	{brd_i}
+                       
+client.background      	{bg}
