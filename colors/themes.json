@@ -55,7 +55,7 @@
                 "bg": 1,
                 "fg": 4,
                 "act": 8,
-                "brd": 3,
+                "brd": 4,
                 "txt": 0
             },
             "foreground": "#4a4543",

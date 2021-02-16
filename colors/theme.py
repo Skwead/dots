@@ -58,7 +58,7 @@ class ThemeManager:
         self.update_polybar(
                 theme["background"], 
                 theme["foreground"], 
-                theme["color"])
+                cols, cmap)
         
         self.update_rofi(
                 cols[cmap["txt"]],      # txt 
@@ -114,13 +114,18 @@ class ThemeManager:
         os.system(f'feh --bg-scale {name} &')
 
     
-    def update_polybar(self, background, foreground, colors):
+    def update_polybar(self, background, foreground, cols, cmap):
         f_dir = f"{home}/.config/polybar/template.ini"
 
         with open(f_dir, 'r') as f:
             f_str = "".join(f.readlines())
         
-        f_str = f_str.format(bg=background, fg=foreground, c=colors)
+        f_str = f_str.format(bg=background, fg=foreground, 
+                bga = cols[cmap['bg']],
+                fga = cols[cmap['fg']],
+                act = cols[cmap['act']],
+                brd = cols[cmap['brd']],
+                txt = cols[cmap['txt']])
 
         with open(f"{home}/.config/polybar/colors.ini", 'w') as poly:
             poly.write(f_str)

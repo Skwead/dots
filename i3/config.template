@@ -58,8 +58,9 @@ bindsym $mod+b exec firefox
 bindsym $mod+f exec pcmanfm
 
 # Show/hide the bar
-bindsym $mod+o exec i3bar --bar_id=bar-0
-bindsym $mod+p exec pkill i3bar
+# pkill polybar; polybar -c ~/.config/polybar/config.ini mine &
+bindsym $mod+o exec "pkill polybar; polybar -c ~/.config/polybar/config.ini mine &"
+bindsym $mod+p exec pkill polybar
 
 # change focus
 bindsym $mod+j focus left
